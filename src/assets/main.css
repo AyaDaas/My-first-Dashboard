@@ -1,0 +1,13 @@
+ body{
+  background-color: #eee;
+
+ }
+
+ :root{
+  --blueGradiant:linear-gradient(to bottom, #0074e4, #001f5a);
+  --blueDark:#001f5a;
+
+ }
+ a{
+  text-decoration: none;
+ }

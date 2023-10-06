@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "text": "Dashboard",
+        "active": false,
+        "path": "/home"
+    },
+    {
+        "id": 2,
+        "text": "Inbox",
+        "active": false,
+        "path": "/inbox"
+    },
+    {
+        "id": 3,
+        "text": "Chart",
+        "active": false,
+        "path": "/chart"
+    },
+    {
+        "id": 4,
+        "text": "Wizard",
+        "active": false,
+        "path": "/wizard"
+    },
+    {
+        "id": 5,
+        "text": "Profile",
+        "active": false,
+        "path": "/profile"
+    },
+    {
+        "id": 6,
+        "text": "Settings",
+        "active": false,
+        "path": "/settings"
+    }
+]
