@@ -3,7 +3,6 @@
         <Loading v-if="isLoading"></Loading>
 
         <div class="header">
-
             <h4 class="p-5  text-light">Dashboard Admin</h4>
         </div>
         <div class="container-fluid">

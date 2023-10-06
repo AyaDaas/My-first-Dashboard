@@ -36,7 +36,7 @@
                             :key="field.id">
                             <br>
 
-                            <div v-if="shouldRenderField(field)">
+                            <div v-if="!field.is_child_for || form.fields.find(f => f.id === field.is_parent_for)">
 
                                 <span class="d-flex justify-content-between" v-if="field.id === '1'">
                                     <div class="d-flex   justify-content-between">
@@ -57,12 +57,14 @@
                                     <InputFeild :label="field.name"></InputFeild>
                                 </div>
                                 <div v-else-if="field.type === 'select'">
-                                    <Select :label="field.name">
+                                    <Select v-model="field.selectedValue" :label="field.name">
                                         <option class="" v-for="option in field.options" :key="option.id"
-                                            :value="option.option_value">{{
-                                                option.option_value }}</option>
+                                            :value="option.option_value">
+                                            {{ option.option_value }}
+                                        </option>
                                     </Select>
                                 </div>
+
                                 <div v-else-if="field.type === 'header'">
                                     <h6 class="text-primary">{{ field.name }}</h6>
                                 </div>
@@ -87,7 +89,12 @@
                                     <h1>forget put that</h1>
                                 </div>
 
+
                             </div>
+
+
+
+
 
                         </div>
                         <br>
@@ -171,25 +178,8 @@ console.log(currentFormIndex)
 //         currentFormIndex.value++
 //     }
 // }
-
-
-const showFieldMap = ref({});
-// const isParentVisible = (field) => {
-//     return !field.is_child_for || showFieldMap[field.is_child_for];
-// };
-
-// console.log(field.is_child_for)
-
-// // !isParentVisible
-
-const isParentVisible = (field) => {
-    return !field.is_child_for || showFieldMap[field.is_child_for];
-};
-
-// You can define a computed property to determine if a field should be rendered
-const shouldRenderField = (field) => {
-    return isParentVisible(field);
-};
+const selectedValue = ref(null);
+console.log(selectedValue.value)
 console.log(selectionOption.value)
-console.log(showFieldMap.value)
+
 </script>

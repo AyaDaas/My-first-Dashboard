@@ -7,7 +7,8 @@
         </select>
 
 
-        <select v-else class="form-select " aria-label="Default select example">
+        <select v-else :value="value" @input="$emit('input', $event.target.value)" class="form-select "
+            aria-label="Default select example">
             <slot></slot>
         </select>
 
@@ -19,6 +20,8 @@ const props = defineProps({
     label: String,
     links: Array,
     option: String,
+    value: String,
+
     selectedOption: {
         type: String,
         required: false,
