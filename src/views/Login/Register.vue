@@ -72,7 +72,7 @@
 
                                 <div class="form-check d-flex justify-content-start mx-4 mb-3">
 
-                                    <input v-model="agreedToTerms" required class="form-check-input  me-3 opacity7"
+                                    <input v-model="agreedToTerms" required class="form-check-input  me-2 opacity7"
                                         type="checkbox" value="" id="form2Example3c" />
                                     <label class="form-check-label fs-7" for="form2Example3">
                                         I agree to all statements in

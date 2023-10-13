@@ -2,17 +2,35 @@
     <div class="form-check ">
         <span>{{ name }}</span>
         <label class="form-check-label radio" :for="label">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" :id="label">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" :checked="isChecked" @input="updateValue"
+                :id="label">
             {{ label }}
         </label>
     </div>
 </template>
-<script setup>
-const props = defineProps({
-    label: String,
-    name: String
-
-})
+<script>
+export default {
+    props: {
+        label: String,
+        name: String,
+        modelValue: String, // Change modelValue to an array
+    },
+    computed: {
+        id() {
+            return `radio_${this._uid}`;
+        },
+        isChecked() {
+            return this.modelValue === this.label;
+        },
+    },
+    methods: {
+        updateValue() {
+            if (!this.isChecked) {
+                this.$emit('update:modelValue', this.label);
+            }
+        },
+    },
+};
 </script>
 <style>
 .radio {

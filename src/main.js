@@ -12,7 +12,7 @@ import DropdownMenu from './components/core/DropdownMenu.vue'
 import Tabs from './components/content/Tabs.vue'
 import Select from './components/core/Select.vue'
 import RadioButton from './components/core/RadioButton.vue'
-import InputFeild from './components/core/InputFeild.vue'
+import InputField from './components/core/InputField.vue'
 import Button from './components/core/Button.vue'
 import Spinner from './components/core/Spinner.vue'
 import Textarea from './components/core/Textarea.vue'
@@ -34,7 +34,7 @@ app.component('DropdownMenu', DropdownMenu)
 app.component('Tabs', Tabs)
 app.component('Select', Select)
 app.component('RadioButton', RadioButton)
-app.component('InputFeild', InputFeild)
+app.component('InputField', InputField)
 app.component('Button', Button)
 app.component('Spinner', Spinner)
 app.component('Textarea', Textarea)
@@ -42,6 +42,7 @@ app.component('Checkbox', Checkbox)
 app.component('UploadFile', UploadFile)
 app.component('Date', Date)
 app.component('Loading', Loading)
+
 
 
 

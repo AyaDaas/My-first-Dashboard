@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "site": "myfirst-site1999",
     "public": "dist",
     "ignore": [
       "firebase.json",

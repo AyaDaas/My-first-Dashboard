@@ -5,7 +5,7 @@
   "scope": "/",
   "start_url": "/    ",
   "name": "Dashboard Admin",
-  "description": "Dashboard Admin Example ",
+  "description": "Dashboard Admin template using Vue 3, Bootstrap , jQuery Datatable , Apexchart ,Firebase ",
   "short_name": "Dashboard-Admin",
   "orientation": "portrait",
   "icons": [

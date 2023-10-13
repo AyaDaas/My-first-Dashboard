@@ -21,8 +21,8 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <InputFeild type="email" label="Email" placeholder="Enter you email"></InputFeild>
-                                    <InputFeild type="text" label="Fullname" placeholder="Enter you Name"></InputFeild>
+                                    <InputField type="email" label="Email" placeholder="Enter you email"></InputField>
+                                    <InputField type="text" label="Fullname" placeholder="Enter you Name"></InputField>
                                     <br />
                                     <div class="alert alert-warning mt-3">
                                         Your email is not confirmed. Please check your inbox.<br />
@@ -37,12 +37,12 @@
                             <div class="h-50">
                                 <div class="tab-pane show" id="account-change-password">
                                     <div class="card-body pb-2">
-                                        <InputFeild type="password" label="Current password" placeholder="Current password">
-                                        </InputFeild>
-                                        <InputFeild type="password" label="New password" placeholder="New password">
-                                        </InputFeild>
-                                        <InputFeild type="password" label="Repeat New password" placeholder="New password">
-                                        </InputFeild>
+                                        <InputField type="password" label="Current password" placeholder="Current password">
+                                        </InputField>
+                                        <InputField type="password" label="New password" placeholder="New password">
+                                        </InputField>
+                                        <InputField type="password" label="Repeat New password" placeholder="New password">
+                                        </InputField>
                                     </div>
                                 </div>
                             </div>
@@ -52,14 +52,14 @@
                                 <div class="tab-pane" id="account-info">
                                     <div class="card-body pb-2">
                                         <Textarea placeholder="Write About Yourself" label="Bio" rows="7"></Textarea>
-                                        <InputFeild type="date" label="Birthday" placeholder=""> </InputFeild>
+                                        <InputField type="date" label="Birthday" placeholder=""> </InputField>
                                         <Select label="Country" :links="['USA', 'Canada', 'JOR']"> </Select>
                                     </div>
                                     <div class="card-body pb-2">
                                         <h5 class="mb-4">Contacts</h5>
-                                        <InputFeild type="text" label="Phone" placeholder="Phone"> </InputFeild>
-                                        <InputFeild type="text" label="Alternative Phone" placeholder="Phone">
-                                        </InputFeild>
+                                        <InputField type="text" label="Phone" placeholder="Phone"> </InputField>
+                                        <InputField type="text" label="Alternative Phone" placeholder="Phone">
+                                        </InputField>
                                     </div>
                                 </div>
                             </div>
@@ -68,15 +68,15 @@
                             <div class="h-50">
                                 <div class="tab-pane" id="account-social-links">
                                     <div class="card-body pb-2">
-                                        <InputFeild type="text" label="Twitter Link" placeholder="Twitter Link">
-                                        </InputFeild>
-                                        <InputFeild type="text" label="Facebook Link" placeholder="Facebook Link">
-                                        </InputFeild>
-                                        <InputFeild type="text" label="Google" placeholder="Google"> </InputFeild>
-                                        <InputFeild type="text" label="LinkedIn Link" placeholder="LinkedIn Link">
-                                        </InputFeild>
-                                        <InputFeild type="text" label="Instagram Link" placeholder="Instagram Link">
-                                        </InputFeild>
+                                        <InputField type="text" label="Twitter Link" placeholder="Twitter Link">
+                                        </InputField>
+                                        <InputField type="text" label="Facebook Link" placeholder="Facebook Link">
+                                        </InputField>
+                                        <InputField type="text" label="Google" placeholder="Google"> </InputField>
+                                        <InputField type="text" label="LinkedIn Link" placeholder="LinkedIn Link">
+                                        </InputField>
+                                        <InputField type="text" label="Instagram Link" placeholder="Instagram Link">
+                                        </InputField>
                                     </div>
                                 </div>
                             </div>

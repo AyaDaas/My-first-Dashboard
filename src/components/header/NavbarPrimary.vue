@@ -1,42 +1,59 @@
-<script setup>
+ 
+<script>
 import DropdownMenu from '../core/DropdownMenu.vue';
 import IconSearch from '../icons/IconSearch.vue';
 import IconBell from '../icons/IconBell.vue';
 import IconMessage from '../icons/IconMessage.vue';
 import IconToogle from '../icons/IconToggle.vue';
 import NavbarSecundery from './NavbarSecundery.vue';
-import { ref, computed, onBeforeUnmount, onMounted } from 'vue';
-const active = ref(false);
 
-const isLgorXl = computed(() => {
-    const screenWidth = window.innerWidth
-    return screenWidth >= 1024
-})
-onMounted(() => {
-    window.addEventListener('resize', handleResize);
+export default {
+    components: {
+        DropdownMenu, IconSearch, IconBell, IconMessage, IconToogle, NavbarSecundery
+    },
+    data() {
+        return {
+            active: false,
+        };
+    },
 
-});
+    computed: {
+        isLgorXl() {
+            const screenWidth = window.innerWidth;
+            return screenWidth >= 1024;
 
-// Remove the event listener when the component is unmounted
-onBeforeUnmount(() => {
-    window.removeEventListener('resize', handleResize);
+        },
+    },
 
-});
+    methods: {
+        handleResize() {
+            this.active = this.isLgorXl;
+            // window.location.reload();
+        },
 
-// Function to handle window resize events
-const handleResize = () => {
-    active.value = isLgorXl.value;
-    history.go(0);
+        closeSidebar() {
+            if (!this.isLgorXl && !this.active) {
+                this.active = false;
+            }
+        },
 
+        toggleSidebar() {
+            this.active = !this.active;
+        },
+    },
+
+    mounted() {
+        window.addEventListener('resize', this.handleResize);
+        // document.addEventListener("click", this.closeSidebar);
+    },
+
+    beforeUnmount() {
+        window.removeEventListener('resize', this.handleResize);
+        // document.removeEventListener("click", this.closeSidebar);
+    },
 };
-
-active.value = isLgorXl.value;
-
-const toggleSidebar = () => {
-    active.value = !active.value;
-};
-
 </script>
+  
 
 <template>
     <nav :class="{ 'margin-right-250px': active }" class="navbar    bg-">
@@ -55,7 +72,7 @@ const toggleSidebar = () => {
                                 <icon-toogle></icon-toogle>
                             </i>
 
-                            <div id="sidebar" class="sidebar   " :class="{ active: active }">
+                            <div id="sidebar" class="sidebar   " :class="{ active: active }" @click.stop>
                                 <div class=" ">
                                     <NavbarSecundery></NavbarSecundery>
                                 </div>

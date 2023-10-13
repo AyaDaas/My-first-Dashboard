@@ -19,7 +19,7 @@
         </div>
 
         <div class="footer-sidebar">
-            <p class="log" @click="logout">Logout</p>
+            <p class="log" @click="signOutUser">Logout</p>
         </div>
     </div>
 </template>
@@ -27,23 +27,24 @@
 <script setup>
 import { ref } from 'vue';
 import sidebarItems from './sidebarItems.json';
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRouter } from 'vue-router';
+import { getAuth, signOut } from 'firebase/auth';
 
 const items = ref(sidebarItems);
 
 const onItemClick = (item) => {
-    // Reset the 'active' property for all items
     items.value.forEach((i) => {
         i.active = false;
     });
 
-    // Set the 'active' property for the clicked item
     item.active = true;
 };
-
-const logout = () => {
-    // Implement your logout logic here
-    console.log('Logged out');
+const router = useRouter()
+const signOutUser = () => {
+    const auth = getAuth()
+    signOut(auth).then(() => {
+        router.push('./sign-in')
+    })
 };
 </script>
   
